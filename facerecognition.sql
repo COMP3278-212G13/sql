@@ -20,6 +20,10 @@ SET time_zone = "+00:00";
 -- Database: `facerecognition`
 --
 
+DROP DATABASE IF EXISTS `facerecognition`;
+CREATE DATABASE `facerecognition`;
+USE `facerecognition`;
+
 -- --------------------------------------------------------
 
 --
@@ -43,11 +47,11 @@ set foreign_key_checks=1;
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (customer_id, 'Chenjiakai', 'a123c', '2021-09-01','23:11');
-INSERT INTO `Customer` VALUES (customer_id, 'Wuqingyi', 'b458d', '2020-03-01','00:12');
-INSERT INTO `Customer` VALUES (customer_id, 'Wanqianyong', 'df123456', '2021-01-14','15:30');
-INSERT INTO `Customer` VALUES (customer_id, 'Chankwanyi', 'gsd786', '2021-10-07','19:30');
-INSERT INTO `Customer` VALUES (customer_id, 'Longkehan', 'dsaf123', '2020-12-30','9:00');
+INSERT INTO `Customer` VALUES (null, 'Chenjiakai', 'a123c', '2021-09-01','23:11');
+INSERT INTO `Customer` VALUES (null, 'Wuqingyi', 'b458d', '2020-03-01','00:12');
+INSERT INTO `Customer` VALUES (null, 'Wanqianyong', 'df123456', '2021-01-14','15:30');
+INSERT INTO `Customer` VALUES (null, 'Chankwanyi', 'gsd786', '2021-10-07','19:30');
+INSERT INTO `Customer` VALUES (null, 'Longkehan', 'dsaf123', '2020-12-30','9:00');
 /*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,20 +78,20 @@ set foreign_key_checks=1;
 
 LOCK TABLES `Account` WRITE;
 /*!40000 ALTER TABLE `Account` DISABLE KEYS */;
-INSERT INTO `Account` VALUES (account_id, 1,'Saving','HKD','2021-09-21');
-INSERT INTO `Account` VALUES (account_id, 1,'Current','HKD','2021-09-02');
-INSERT INTO `Account` VALUES (account_id, 1,'Current','USD','2021-09-03');
-INSERT INTO `Account` VALUES (account_id, 2,'Saving','USD','2020-03-05');
-INSERT INTO `Account` VALUES (account_id, 2,'Saving','HKD','2020-03-01');
-INSERT INTO `Account` VALUES (account_id, 2,'Credit','HKD','2021-08-01');
-INSERT INTO `Account` VALUES (account_id, 2,'Current','HKD','2021-03-01');
-INSERT INTO `Account` VALUES (account_id, 3,'Current','HKD','2021-01-15');
-INSERT INTO `Account` VALUES (account_id, 3,'Credit','HKD','2021-01-20');
-INSERT INTO `Account` VALUES (account_id, 4,'Saving','HKD','2021-10-15');
-INSERT INTO `Account` VALUES (account_id, 4,'Current','HKD','2021-11-01');
-INSERT INTO `Account` VALUES (account_id, 4,'Current','USD','2020-12-30');
-INSERT INTO `Account` VALUES (account_id, 5,'Credit','HKD','2021-01-01');
-INSERT INTO `Account` VALUES (account_id, 5,'Saving','HKD','2020-12-30');
+INSERT INTO `Account` VALUES (null, 1,'Saving','HKD','2021-09-21');
+INSERT INTO `Account` VALUES (null, 1,'Current','HKD','2021-09-02');
+INSERT INTO `Account` VALUES (null, 1,'Current','USD','2021-09-03');
+INSERT INTO `Account` VALUES (null, 2,'Saving','USD','2020-03-05');
+INSERT INTO `Account` VALUES (null, 2,'Saving','HKD','2020-03-01');
+INSERT INTO `Account` VALUES (null, 2,'Credit','HKD','2021-08-01');
+INSERT INTO `Account` VALUES (null, 2,'Current','HKD','2021-03-01');
+INSERT INTO `Account` VALUES (null, 3,'Current','HKD','2021-01-15');
+INSERT INTO `Account` VALUES (null, 3,'Credit','HKD','2021-01-20');
+INSERT INTO `Account` VALUES (null, 4,'Saving','HKD','2021-10-15');
+INSERT INTO `Account` VALUES (null, 4,'Current','HKD','2021-11-01');
+INSERT INTO `Account` VALUES (null, 4,'Current','USD','2020-12-30');
+INSERT INTO `Account` VALUES (null, 5,'Credit','HKD','2021-01-01');
+INSERT INTO `Account` VALUES (null, 5,'Saving','HKD','2020-12-30');
 /*!40000 ALTER TABLE `Account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -176,11 +180,11 @@ CREATE TABLE `Transaction` (
 
 set foreign_key_checks=0;
 truncate table Transaction;
-set foreign_ket_checks=1;
+set foreign_key_checks=1;
 
 LOCK TABLES `Transaction` WRITE;
 /*!40000 ALTER TABLE `Transaction` DISABLE KEYS */;
-INSERT INTO `Transaction` VALUES();
+# INSERT INTO `Transaction` VALUES();
 /*!40000 ALTER TABLE `Transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 
