@@ -39,7 +39,7 @@ CREATE TABLE `Customer` (
   `login_date` date NOT NULL,
   `login_time` time NOT NULL,
   PRIMARY KEY (customer_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 auto_increment=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 auto_increment=1;
 
 set foreign_key_checks=0;
 truncate table Customer;
@@ -70,7 +70,7 @@ CREATE TABLE `Account` (
   `create_date` date NOT NULL,
   PRIMARY KEY (account_id),
   FOREIGN KEY(customer_id) REFERENCES Customer(customer_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 auto_increment=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 auto_increment=1;
 
 set foreign_key_checks=0;
 truncate table Account;
@@ -96,7 +96,7 @@ INSERT INTO `Account` VALUES (null, 5,'Saving','HKD','2020-12-30');
 UNLOCK TABLES;
 
 
-# create TABLE Current 
+# create TABLE Current
 DROP TABLE IF EXISTS `Current`;
 
 CREATE TABLE `Current` (
@@ -118,7 +118,7 @@ INSERT INTO `Current` VALUES (12,500);
 UNLOCK TABLES;
 
 
-# create TABLE Saving 
+# create TABLE Saving
 DROP TABLE IF EXISTS `Saving`;
 
 CREATE TABLE `Saving` (
@@ -141,7 +141,7 @@ INSERT INTO `Saving` VALUES (14,10000,6,'2030-12-30');
 UNLOCK TABLES;
 
 
-#create table credit 
+#create table credit
 DROP TABLE IF EXISTS `Credit`;
 
 CREATE TABLE `Credit` (
@@ -176,7 +176,7 @@ CREATE TABLE `Transaction` (
   PRIMARY KEY (transaction_id),
   FOREIGN KEY(from_account) REFERENCES Account(account_id),
   FOREIGN KEY(to_account) REFERENCES Account(account_id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 auto_increment=1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 auto_increment=1;
 
 set foreign_key_checks=0;
 truncate table Transaction;
