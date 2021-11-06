@@ -8,7 +8,7 @@
 -- PHP Version: 7.2.24-0ubuntu0.18.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET global time_zone = "+08:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS `Customer`;
 CREATE TABLE `Customer` (
   `customer_id` int NOT NULL auto_increment,
   `name` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` char(56) NOT NULL,
   `login_date` date NOT NULL,
   `login_time` time NOT NULL,
   PRIMARY KEY (customer_id)
@@ -47,11 +47,11 @@ set foreign_key_checks=1;
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (null, 'Chenjiakai', 'a123c', '2021-09-01','23:11');
-INSERT INTO `Customer` VALUES (null, 'Wuqingyi', 'b458d', '2020-03-01','00:12');
-INSERT INTO `Customer` VALUES (null, 'Wanqianyong', 'df123456', '2021-01-14','15:30');
-INSERT INTO `Customer` VALUES (null, 'Chankwanyi', 'gsd786', '2021-10-07','19:30');
-INSERT INTO `Customer` VALUES (null, 'Longkehan', 'dsaf123', '2020-12-30','9:00');
+INSERT INTO `Customer` VALUES (null, 'Chenjiakai', SHA2('a123c', 224), '2021-09-01','23:11');
+INSERT INTO `Customer` VALUES (null, 'Wuqingyi', SHA2('b458d', 224), '2020-03-01','00:12');
+INSERT INTO `Customer` VALUES (null, 'Wanqianyong', SHA2('df123456', 224), '2021-01-14','15:30');
+INSERT INTO `Customer` VALUES (null, 'Chankwanyi', SHA2('gsd786', 224), '2021-10-07','19:30');
+INSERT INTO `Customer` VALUES (null, 'Longkehan', SHA2('dsaf123', 224), '2020-12-30','9:00');
 /*!40000 ALTER TABLE `Customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
