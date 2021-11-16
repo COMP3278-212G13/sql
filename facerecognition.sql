@@ -47,7 +47,7 @@ set foreign_key_checks=1;
 
 LOCK TABLES `Customer` WRITE;
 /*!40000 ALTER TABLE `Customer` DISABLE KEYS */;
-INSERT INTO `Customer` VALUES (null, 'Chenjiakai', SHA2('a123c', 224), '2016-09-01','10:--');
+INSERT INTO `Customer` VALUES (null, 'Chenjiakai', SHA2('a123c', 224), '2016-09-01','10:11');
 INSERT INTO `Customer` VALUES (null, 'Wuqingyi', SHA2('b458d', 224), '2017-03-01','12:00');
 INSERT INTO `Customer` VALUES (null, 'Wanqianyong', SHA2('df123456', 224), '2018-01-14','15:30');
 INSERT INTO `Customer` VALUES (null, 'Longkehan', SHA2('gsd786', 224), '2015-01-02','14:30');
@@ -139,7 +139,7 @@ CREATE TABLE `Saving` (
   `saving_id` int(11) NOT NULL,
   PRIMARY KEY (account_id, saving_id),
   FOREIGN KEY(account_id) REFERENCES Account(account_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 LOCK TABLES `Saving` WRITE;
 /*!40000 ALTER TABLE `Saving` DISABLE KEYS */;
@@ -207,7 +207,7 @@ CREATE TABLE `Transaction` (
   PRIMARY KEY (transaction_id),
   FOREIGN KEY(from_account) REFERENCES Account(account_id),
   FOREIGN KEY(to_account) REFERENCES Account(account_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 set foreign_key_checks=0;
 truncate table Transaction;
